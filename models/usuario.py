@@ -5,6 +5,9 @@ from models.profissao import Profissao
 class Usuario:
     id: int
     nome : str
+    foto : str
+    data_nascimento : str
+    link_profissional : str
     email : str
     senha : str
     cpf : str

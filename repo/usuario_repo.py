@@ -13,7 +13,7 @@ def inserir_usuario(usuario: Usuario) -> int:
         cursor = conexao.cursor()
         cursor.execute(
             INSERIR_USUARIO,
-            (usuario.nome, usuario.email, usuario.senha, usuario.cpf, usuario.telefone, usuario.profissao.nome, usuario.status, usuario.avaliacao)
+            (usuario.nome, usuario.foto, usuario.data_nascimento, usuario.link_profissional, usuario.email, usuario.senha, usuario.cpf, usuario.telefone, usuario.profissao.nome, usuario.status, usuario.avaliacao)
         )
         return cursor.lastrowid
     
@@ -22,7 +22,7 @@ def atualizar_usuario(usuario: Usuario) -> int:
         cursor = conexao.cursor()
         cursor.execute(
             ATUALIZAR_USUARIO,
-            (usuario.nome, usuario.email, usuario.senha, usuario.cpf, usuario.telefone, usuario.profissao.nome, usuario.status, usuario.id)
+            (usuario.nome, usuario.foto, usuario.data_nascimento, usuario.link_profissional, usuario.email, usuario.senha, usuario.cpf, usuario.telefone, usuario.profissao.nome, usuario.status, usuario.id)
         )
         return cursor.rowcount > 0
     
